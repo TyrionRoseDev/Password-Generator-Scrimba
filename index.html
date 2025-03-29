@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Generate a <span id="title-details">random password</span></h1>
+    <h2>Never use an insecure password again</h2>
+
+    <button id="generate-password" class="generate-password">
+      Generate Password
+    </button>
+    <div class="divider"></div>
+
+    <div class="options">
+      <div id="option-one" class="option-one">option1</div>
+      <div id="option-two" class="option-two">option2</div>
+    </div>
+    <div class="check-box">
+      <input type="checkbox" id="toggle-numbers" name="toggle-numbers" />
+      <label for="toggle-numbers">Include numbers</label>
+    </div>
+    <div class="check-box">
+      <input
+        type="checkbox"
+        id="toggle-special-characters"
+        name="toggle-special-characters"
+      />
+      <label for="toggle-special-characters">Include special characters</label>
+    </div>
+    <div class="check-box">
+      <input type="checkbox" id="toggle-letters" name="toggle-letters" />
+      <label for="toggle-letters">Include letters</label>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
+<!-- TODO add onclick to check box -->
