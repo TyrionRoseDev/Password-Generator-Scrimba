@@ -1,3 +1,5 @@
+console.log("gooch");
+
 const characters = [
   "A",
   "B",
@@ -113,9 +115,8 @@ function generate() {
   optionOne.textContent = generateRandomPassword();
   optionTwo.textContent = generateRandomPassword();
 }
-
-// TODO TDOGS GOALS
-// DARK MODE
-// WHAT CHARACTERS WANT TO USE ON TICKBOX
-// toggle length
-// STAR WARS THEME
+const lightsaber = document.getElementById("lightsaber");
+console.log(lightsaber);
+lightsaber.addEventListener("click", function () {
+  this.classList.toggle("active");
+});

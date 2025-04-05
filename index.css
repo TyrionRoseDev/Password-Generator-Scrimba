@@ -1,24 +1,39 @@
+@font-face {
+  src: url("jedi.otf");
+  font-family: Jedi;
+}
+:root{
+  
+  --lightsaber-handle: #777777;
+  --lightsaber-glow: #ff0000;
+  --lightsaber-blade: #ff6666;
+
+}
+
+
 body {
   margin: 0;
   background-image: url(dark-images/darkmode.png);
   background-repeat: no-repeat;
   background-size: cover;
-  /* TODO GALACTIC FONT BUT NOT IN OPTIONS SEE WHAT KOOKS LIKE IN BUTTON BUT NOT SURE */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 h1 {
+  font-family: Jedi;
   font-weight: bold;
   font-size: 80px;
   font-weight: 800;
   line-height: 60px;
-  width: 700px;
+  width: 1000px;
   margin-top: 200px;
-  margin-left: 52px;
   margin-bottom: 0;
-  color: #1f0301;
+  color: #decd11;
   text-shadow: 5px 5px 2px black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
+  line-height: 5rem;
+  letter-spacing: 0.25rem;
 }
 
 #title-details {
@@ -26,14 +41,15 @@ h1 {
   text-shadow: 2px 1px 1px #540b0e;
 }
 
-/* todo make galactix slight glow make generate a reading easier make titles larger center them better sio that all the h1 is on 1 or 2 lines center the may the securityetc*/
 #title-glow {
-  text-shadow: 2px 1px 8px hsl(359, 58%, %);
+  background: linear-gradient(45deg, #decd11, #ff4500, #4b0082);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
   color: #d5d4d8;
-  width: 372px;
   height: 28px;
   margin-left: 52px;
   font-weight: 400px;
@@ -44,36 +60,19 @@ h2 {
 }
 
 .generate-password {
-  background-color: #9e2a2b;
-  color: white;
   width: 191px;
   height: 42px;
   margin-top: 30px;
   margin-bottom: 50px;
   border-radius: 20px;
-  padding-top: 9px;
-  padding-right: 17px;
-  padding-bottom: 9px;
-  padding-left: 15px;
+  padding: 9px 15px;
   gap: 12px;
   font-size: 15px;
   font-weight: bold;
   box-shadow: inset 5px -5px 3px rgba(0, 0, 0, 0.5);
-  border: 0;
-  /* TODO ADD LITTLE ANIMATION SAVED ON UIVERSE */
-  /* TODO CENTER BUTTON TRIED MARGIN AUTO AND ALIGN SELF AND FLEXBOX NO WORK  */
+  border-bottom: 2px;
+  background: linear-gradient(to right, #decd11, #ff4500, #4b0082);
 }
-/* .generate-password::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #ffd700, transparent);
-  transition: width 0.3s ease;
-} */
-/* TODO THIS DOESNT WORK FIX IT CRAP GOT FROM VO HISTORY */
 
 .options {
   color: #9e2a2b;
@@ -85,7 +84,6 @@ h2 {
 .option-one,
 .option-two {
   background-color: white;
-  /* TODO fix the boxes look awful */
   width: 211px;
   height: 39px;
   display: flex;
@@ -104,21 +102,171 @@ h2 {
   opacity: 50%;
   transform: scale(1.05);
 }
+
+/* TODO COPY HINT */
 /* TODO MAYBE LITTLE SOUND WHEN CLICK BUTTON */
-.divider {
-  width: 446px;
-  height: 2px;
-  top: 361px;
-  left: 52px;
-  background-color: #9e2a2b;
-  border-width: 1px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-  /* TODO ANIMATE SO LOOKS LIKE PULSING LIKE LIGHTSABER */
+
+
+.card {
+  margin-top:40px;
+ color: #d5d4d8;
+  width: 800px;
+  height:50px;
+  border-radius: 10px;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+
+}
+.rainbow-button {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  padding: 10px 20px;
+  margin:20px;
+  margin-bottom: 80px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.28px solid transparent;
+  transition: transform 0.2s;
+  background-image: 
+    linear-gradient(#fff, #fff),
+    linear-gradient(#fff 50%, rgba(255,255,255,0.6) 80%, rgba(0,0,0,0)),
+    linear-gradient(90deg, 
+    #decd11, #ff4500, #4b0082
+      );
+  background-size: 200%;
+  background-clip: padding-box, border-box, border-box;
+  background-origin: border-box;
+}
+.rainbow-button::after {
+  
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--lightsaber-glow), transparent);
+  transition: width 0.3s ease;
 }
 
-.check-box {
-  color: #9e2a2b;
-  /* TODO THINK OF NICE WAY TO */
+@media (prefers-color-scheme: dark) {
+  .rainbow-button {
+    background-image: 
+      linear-gradient(#121213, #121213),
+      linear-gradient(#121213 50%, rgba(18,18,19,0.6) 80%, rgba(18,18,19,0)),
+      linear-gradient(90deg, 
+      #decd11, #ff4500, #4b0082
+      );
+  }
+}
+
+.rainbow-button::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  z-index: 0;
+  height: 20%;
+  width: 60%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+  #decd11, #ff4500, #4b0082
+  );
+  filter: blur(12.8px);
+  animation: rainbow 4s linear infinite;
+}
+
+.rainbow-button:hover {
+  transform: scale(1.05);
+}
+
+.rainbow-button:active {
+  transform: scale(0.95);
+}
+
+
+
+
+.button-text {
+  margin-left: 4px;
+  color: white;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.lightsaber {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translateY(-50%) rotate(90deg);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.lightsaber-handle {
+  width: 10px;
+  height: 80px;
+  background: linear-gradient(to right, #444, var(--lightsaber-handle), #444);
+  border-radius: 4px;
+  position: relative;
+}
+
+.lightsaber-handle::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -2px;
+  width: 14px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+.lightsaber-handle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: -2px;
+  width: 14px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+.lightsaber-blade {
+  width: 6px;
+  height: 0;
+  background-color: var(--lightsaber-blade);
+  border-radius: 3px;
+  box-shadow: 0 0 10px 2px var(--lightsaber-glow);
+  transition: height 0.5s ease;
+  position: relative;
+  top: -2px;
+}
+
+.lightsaber.active .lightsaber-blade {
+  height: 200px;
 }

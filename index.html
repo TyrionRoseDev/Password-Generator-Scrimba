@@ -3,47 +3,50 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div>
-      <h1>
-        Generate a
-        <span id="title-details"
-          ><span id="title-glow">galactic</span> password</span
-        >
-      </h1>
-      <h2>May the security, be with you</h2>
-    </div>
+    <h1>
+      Generate a
+      <br />
+      <span id="title-details"
+        ><span id="title-glow">galactic</span> password</span
+      >
+    </h1>
+    <h2>May the security, be with you</h2>
 
-    <button id="generate-password" class="generate-password">
-      Generate Password
+    <button id="generate-password" class="rainbow-button">
+      <div class="button-content">
+        <span class="button-text">Use the Force</span>
+      </div>
     </button>
-    <div class="divider"></div>
+    <div id="lightsaber" class="lightsaber">
+      <div class="lightsaber-blade"></div>
+      <div class="lightsaber-handle"></div>
+    </div>
 
     <div class="options">
       <div id="option-one" class="option-one">option1</div>
       <div id="option-two" class="option-two">option2</div>
     </div>
-    <div class="check-box">
-      <input type="checkbox" id="toggle-numbers" name="toggle-numbers" />
-      <label for="toggle-numbers">Include numbers</label>
-    </div>
-    <div class="check-box">
-      <input
-        type="checkbox"
-        id="toggle-special-characters"
-        name="toggle-special-characters"
-      />
-      <label for="toggle-special-characters">Include special characters</label>
-    </div>
-    <div class="check-box">
-      <input type="checkbox" id="toggle-letters" name="toggle-letters" />
-      <label for="toggle-letters">Include letters</label>
+    <div class="card">
+      <div class="check-box">
+        <input type="checkbox" id="toggle-numbers" name="toggle-numbers" />
+        <label for="toggle-numbers">Include numbers</label>
+      </div>
+      <div class="check-box">
+        <input
+          type="checkbox"
+          id="toggle-special-characters"
+          name="toggle-special-characters"
+        />
+        <label for="toggle-special-characters"
+          >Include special characters</label
+        >
+      </div>
+      <div class="check-box">
+        <input type="checkbox" id="toggle-letters" name="toggle-letters" />
+        <label for="toggle-letters">Include letters</label>
+      </div>
     </div>
 
     <script src="index.js"></script>
   </body>
 </html>
-
-<!-- TODO add onclick to check box -->
-<!-- TODO see if can change the toggle button colors to match background 
- todo <!-- glowing text shadows ligh lightsabers -->
-<!-- TODO copy on click -->
