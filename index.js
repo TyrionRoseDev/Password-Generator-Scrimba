@@ -97,6 +97,7 @@ optionOne.addEventListener("click", function () {
     optionOne.style.transform = "scale(1)";
   }, 100);
 });
+
 optionTwo.addEventListener("click", function () {
   navigator.clipboard.writeText(optionTwo.textContent);
   optionTwo.style.transform = "scale(0.95)";

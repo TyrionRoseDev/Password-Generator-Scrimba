@@ -93,6 +93,9 @@ h2 {
   border-radius: 20px;
   text-shadow: 1px 1px 1px black;
   box-shadow: inset 5px -5px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
 }
 .option-two {
   box-shadow: inset -5px -5px 3px rgba(0, 0, 0, 0.5);
@@ -100,12 +103,46 @@ h2 {
 .option-one:hover,
 .option-two:hover,
 .generate-password:hover {
-  opacity: 50%;
+  opacity: 60%;
   transform: scale(1.05);
+}
+
+.option-one::before,
+.option-two::before {
+  content: "Click to copy";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.option-one:hover::before,
+.option-two:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 .card {
   margin-top:40px;
@@ -215,7 +252,7 @@ h2 {
 .lightsaber {
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 530px;
   transform: translateY(-50%) rotate(90deg);
   z-index: 2;
   display: flex;
